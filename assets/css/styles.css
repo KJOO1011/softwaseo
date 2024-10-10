@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    background-color: #f5f3f3; 
+    background-image: url(imgs/fondoazulcarrito.jpg); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+}
+
+.container nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: rgb(126, 186, 209);
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.container nav .logo {
+    width: 100px;
+    height: auto;
+}
+
+.container nav .auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons button {
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    color: #235af0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-buttons button:hover {
+    background-color: #eaeaea;
+}
+
+.buy-card {
+    display: none;
+}
+
+.cart-container {
+    position: relative;
+}
+
+.cart-container i {
+    font-size: 3rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.cart-container:hover .buy-card {
+    display: block;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.cart-container:hover .nav-card {
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.cart-container:hover .nav-card li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: solid thin #e1e1e1;
+}
+
+.cart-container:hover .buy-card > button {
+    display: block;
+    width: 90%;
+    padding: 1rem;
+    margin: 10px auto;
+    background-color: transparent;
+    border: solid thin #e1e1e1;
+    color: #494848;
+    cursor: pointer;
+}
+
+.cart-container:hover .buy-card > button:hover {
+    border: solid thin #494848;
+    transition: all .4s;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    color: #222;
+}
+
+.grid {
+    display: grid;
+    max-width: 1100px;
+    justify-content: center;
+    margin: auto;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
+    padding-bottom: 50px;
+}
+
+.items {
+    background-color: #fff;
+    border: solid thin #e1e1e1;
+}
+
+.items img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.info {
+    padding: 15px;
+}
+
+.info h3 {
+    font-size: 1.6rem;
+}
+
+.info p {
+    font-size: 1.5rem;
+}
+
+.precio {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+}
+
+.precio p {
+    font-size: 1.8rem;
+}
+
+.info h3,
+.info p {
+    color: #222;
+    margin-bottom: 15px;
+}
+
+
+
+.info button {
+    padding: 1rem;
+    width: 100%;
+    background-color: rgb(126, 186, 209);
+    border: none;
+    outline: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.info button:hover {
+    background-color: #2da0c3;
+    transition: all .3s;
+}
+
+
+
+/* ... (estilos anteriores sin cambios) ... */
+
+.cart-container:hover .buy-card {
+    display: block;
+    width: 300px; /* Reducido de 400px para ser más compacto */
+    max-height: 400px;
+    overflow-y: auto; /* Permite desplazamiento si hay muchos items */
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 10px;
+}
+
+.cart-container:hover .nav-card {
+    font-size: 1.2rem; /* Reducido de 1.4rem para ajustar el tamaño */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.cart-container:hover .nav-card li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: solid thin #e1e1e1;
+}
+
+.cart-container:hover .nav-card li img {
+    width: 40px; /* Tamaño fijo más pequeño */
+    height: 40px;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    margin-right: 10px;
+}
+
+.cart-container:hover .nav-card li span {
+    flex-grow: 1;
+    font-size: 1rem;
+}
+
+.cart-container:hover .nav-card li button {
+    background: none;
+    border: none;
+    color: #ff0000;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0 5px;
+}
+
+.cart-container:hover .buy-card > button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin: 10px 0 0 0;
+    background-color: rgb(126, 186, 209);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cart-container:hover .buy-card > button:hover {
+    background-color: rgb(126, 186, 209);
+}
+
+.cart-container:hover .buy-card > button#buy-cart {
+    background-color: #4CAF50; /* Un color verde para diferenciarlo */
+    margin-top: 10px; /* Espacio entre los botones */
+}
+
+.cart-container:hover .buy-card > button#buy-cart:hover {
+    background-color: #45a049;
+}
+
+.remove-button {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: #ff0000; /* Color rojo */
+    font-size: 1.5rem; /* Tamaño del ícono */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el ícono */
+    padding: 0; /* Sin padding */
+    margin-left: 10px; /* Espacio a la izquierda */
+    transition: transform 0.3s; /* Transición para el efecto hover */
+}
+
+.remove-button:hover {
+    transform: scale(1.2); /* Aumentar el tamaño al pasar el mouse */
+}
+
+/* Estilos del Footer */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Estilos del Footer */
+.site-footer {
+    background-color: rgb(126, 186, 209);
+    color: #fff;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.footer-logo, .footer-info, .footer-contact {
+    flex: 1;
+}
+
+.footer-logo-img {
+    max-width: 100px;
+    height: auto;
+}
+
+.footer-info {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.footer-info h3, .footer-contact h3 {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+
+.footer-contact {
+    text-align: right;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.contact-icons a {
+    color: #fff;
+    font-size: 2.4rem;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact-icons a:hover {
+    color: #2da0c3;
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo, .footer-info, .footer-contact {
+        margin-bottom: 20px;
+    }
+
+    .footer-contact, .contact-icons {
+        justify-content: center;
+    }
+}
